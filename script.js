@@ -68,7 +68,7 @@ allSideMenu.forEach((item) => {
 // Fetch and display products from Fake Store API
 async function fetchProducts() {
     try {
-        const response = await fetch("https://fakestoreapi.com/products");
+        const response = await fetch("./products.json");
         const data = await response.json();
 
         const productList = document.getElementById("product-list");
@@ -113,6 +113,266 @@ async function fetchProducts() {
         console.error("Error fetching products:", error);
     }
 }
-
-// Call the function to fetch and display products
 fetchProducts();
+
+//Analytics//
+//1. barChart
+const canvas = document.getElementById("barChart");
+const ctxBar = canvas.getContext("2d");
+
+// Sample data for the chart
+const data = {
+    labels: [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ],
+    values: [12, 19, 3, 5, 2, 3, 8, 13, 9, 7, 4, 6],
+};
+
+// Chart Configuration
+const chartConfig = {
+    type: "bar",
+    data: {
+        labels: data.labels,
+        datasets: [
+            {
+                label: "Monthly Sales",
+                data: data.values,
+                backgroundColor: [
+                    "rgba(255, 99, 132, 0.2)",
+                    "rgba(54, 162, 235, 0.2)",
+                    "rgba(255, 206, 86, 0.2)",
+                    "rgba(75, 192, 192, 0.2)",
+                    "rgba(153, 102, 255, 0.2)",
+                    "rgba(255, 159, 64, 0.2)",
+                ],
+                borderColor: [
+                    "rgba(255, 99, 132, 1)",
+                    "rgba(54, 162, 235, 1)",
+                    "rgba(255, 206, 86, 1)",
+                    "rgba(75, 192, 192, 1)",
+                    "rgba(153, 102, 255, 1)",
+                    "rgba(255, 159, 64, 1)",
+                ],
+                borderWidth: 1,
+                
+            },
+        ],
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+            },
+        },
+    },
+};
+
+// Initialize the chart using Chart.js
+const myBarChart = new Chart(ctxBar, chartConfig);
+
+//2. InquiryTracking Chart
+const ctxt = document.getElementById("inquiryTrackingChart").getContext("2d");
+
+// Chart data
+const dataSet = {
+    labels: [
+        "JAN/24",
+        "FEB/24",
+        "MAR/24",
+        "APR/24",
+        "MAY/24",
+        "JUN/24",
+        "JUL/24",
+        "AUG/24",
+        "SEP/24",
+        "OCT/24",
+        "NOV/24",
+        "DEC/24",
+    ],
+    datasets: [
+        {
+            label: "Inquiries",
+            data: [
+                10000, 20000, 30000, 50000, 45000, 40000, 35000, 30000, 25000, 20000, 15000, 10000,
+            ],
+            backgroundColor: "rgba(33, 114, 229, 0.8)", // Blue color for bars
+            borderColor: "rgba(33, 114, 229, 1)", // Blue border
+            borderWidth: 1,
+            borderRadius: 10,
+            barPercentage: 0.5, // Make the bar take full width
+        },
+        {
+            label: "Previous Year",
+            data: [
+                8000, 15000, 25000, 45000, 40000, 38000, 34000, 29000, 23000, 18000, 13000, 9000,
+            ],
+            backgroundColor: "rgba(220, 220, 220, 0.8)", // Light gray bars
+            borderColor: "rgba(200, 200, 200, 1)", // Gray border
+            borderRadius: 10,
+            barPercentage: 0.5, // Make the bar take full width
+        },
+    ],
+};
+
+// Chart configuration
+const config = {
+    type: "bar",
+    data: dataSet,
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    // Formatting the Y-axis labels as 'K' (thousands)
+                    callback: function (value) {
+                        return value / 1000 + "K";
+                    },
+                },
+            },
+        },
+        plugins: {
+            legend: {
+                display: true,
+            },
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+    },
+};
+
+// Create and render the chart
+new Chart(ctxt, config);
+
+// 3. Income Chart
+const incomeData = {
+    labels: [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ],
+    datasets: [
+        {
+            label: "Income ($)",
+            data: [
+                12000, 15000, 18000, 20000, 22000, 25000, 30000, 35000, 33000, 28000, 24000, 26000,
+            ],
+            backgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56",
+                "#4BC0C0",
+                "#9966FF",
+                "#FF9F40",
+                "#FFCD56",
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56",
+                "#4BC0C0",
+                "#9966FF",
+            ],
+            hoverOffset: 4, // Slight offset when hovering on a segment
+        },
+    ],
+};
+
+// Chart configuration for Pie chart
+const configure = {
+    type: "line",
+    data: incomeData,
+    options: {
+        plugins: {
+            legend: {
+                display: true,
+                position: "top",
+                labels: {
+                    color: "#333",
+                    font: {
+                        size: 14,
+                    },
+                },
+            },
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+    },
+};
+
+// Render the chart
+const ctxLine = document.getElementById("incomeChart").getContext("2d");
+const incomeChart = new Chart(ctxLine, configure);
+
+// 4. Expenditure Chart
+// Data for the expenditure report
+const expenditureData = {
+    labels: ["Rent", "Utilities", "Groceries", "Transportation", "Entertainment", "Miscellaneous"],
+    datasets: [
+        {
+            label: "Expenditure ($)",
+            data: [1000, 500, 800, 200, 300, 400],
+            backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF", "#FF9F40"],
+            hoverOffset: 4, // Slight offset when hovering
+        },
+    ],
+};
+
+// Total sum of the dataset to calculate percentages and degrees
+const total = expenditureData.datasets[0].data.reduce((sum, value) => sum + value, 0);
+
+// Configuration for the Pie chart
+const configures = {
+    type: "pie",
+    data: expenditureData,
+    options: {
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    // Customize tooltip to show percentage and degree
+                    label: function (tooltipItem) {
+                        const dataset = tooltipItem.dataset;
+                        const index = tooltipItem.dataIndex;
+                        const value = dataset.data[index];
+                        const percentage = ((value / total) * 100).toFixed(2);
+                        const degree = ((value / total) * 360).toFixed(2);
+                        return `${dataset.label}: $${value} (${percentage}% | ${degree}°)`;
+                    },
+                },
+            },
+            legend: {
+                display: true,
+                position: "top",
+                labels: {
+                    color: "#333",
+                    font: {
+                        size: 14,
+                    },
+                },
+            },
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+    },
+};
+
+// Render the chart
+const ctxPie = document.getElementById("expenditureChart").getContext("2d");
+const expenditureChart = new Chart(ctxPie, configures);

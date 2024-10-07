@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="styles.css" />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
         <title>AdminDashboard</title>
     </head>
     <body>
@@ -136,105 +138,55 @@
                 <div class="table-data">
                     <div class="order">
                         <div class="head">
-                            <h3>Recent Orders</h3>
+                            <h3>Sales Report</h3>
                             <i class="bx bx-search"></i>
-                            <i class="bx bx-filter"></i>
+                            <i class="bx bxs-bar-chart-alt-2"></i>
                         </div>
 
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>User</th>
-                                    <th>Date order</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <img
-                                            src="images/bohemian-man-with-his-arms-crossed.jpg"
-                                            alt="" />
-                                        <p>Peter Sticks</p>
-                                    </td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status completed">Completed</span></td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <img
-                                            src="images/bohemian-man-with-his-arms-crossed.jpg"
-                                            alt="" />
-                                        <p>Peter Sticks</p>
-                                    </td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status pending">Pending</span></td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <img
-                                            src="images/bohemian-man-with-his-arms-crossed.jpg"
-                                            alt="" />
-                                        <p>Peter Sticks</p>
-                                    </td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status process">Processing</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img
-                                            src="images/bohemian-man-with-his-arms-crossed.jpg"
-                                            alt="" />
-                                        <p>Peter Sticks</p>
-                                    </td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status pending">Pending</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img
-                                            src="images/bohemian-man-with-his-arms-crossed.jpg"
-                                            alt="" />
-                                        <p>Peter Sticks</p>
-                                    </td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status completed">Completed</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="chart-container">
+                            <canvas id="barChart"></canvas>
+                        </div>
                     </div>
 
                     <div class="todo">
                         <div class="head">
-                            <h3>Todos</h3>
-                            <i class="bx bx-plus"></i>
-                            <i class="bx bx-filter"></i>
+                            <h3>Inquiry Tracking</h3>
+                            <i class="bx bxs-plane-take-off"></i>
+                            <i class="bx bxs-map-alt"></i>
                         </div>
 
                         <ul class="todo-list">
-                            <li class="completed">
-                                <p>Todo List</p>
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </li>
-                            <li class="completed">
-                                <p>Todo List</p>
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </li>
-                            <li class="not-completed">
-                                <p>Todo List</p>
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </li>
-                            <li class="completed">
-                                <p>Todo List</p>
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </li>
-                            <li class="not-completed">
-                                <p>Todo List</p>
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </li>
+                            <div class="chart-container">
+                                <canvas id="inquiryTrackingChart"></canvas>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="table-data">
+                    <div class="order">
+                        <div class="head">
+                            <h3>Income Report</h3>
+                            <i class="bx bx-search"></i>
+                            <i class="bx bx-money-withdraw"></i>
+                        </div>
+
+                        <div class="chart-container">
+                            <canvas id="incomeChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="todo">
+                        <div class="head">
+                            <h3>Expenditure Report</h3>
+                            <i class="bx bx-search"></i>
+                            <i class="bx bxl-stack-overflow"></i>
+                        </div>
+
+                        <ul class="todo-list">
+                            <div class="chart-container">
+                                <canvas id="expenditureChart"></canvas>
+                            </div>
                         </ul>
                     </div>
                 </div>
