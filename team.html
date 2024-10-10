@@ -94,11 +94,11 @@
                         <h1>Team</h1>
                         <ul class="breadcrumb">
                             <li>
-                                <a href="#">Team</a>
+                                <a href="index.html">Dashboard</a>
                             </li>
                             <li><i class="bx bx-chevron-right"></i></li>
                             <li>
-                                <a href="#" class="active">Home</a>
+                                <a href="team.html" class="active">Team</a>
                             </li>
                         </ul>
                     </div>
@@ -107,7 +107,7 @@
                         <span class="text">Download PDF</span>
                     </a>
                 </div>
-
+                <!-- 
                 <ul class="box-info">
                     <li>
                         <i class="bx bxs-calendar-check"></i>
@@ -131,83 +131,78 @@
                             <p>Total Sales</p>
                         </span>
                     </li>
-                </ul>
+                </ul> -->
 
-                <div class="table-data">
-                    <div class="order">
-                        <div class="head">
-                            <h3>Recent Orders</h3>
-                            <i class="bx bx-search"></i>
-                            <i class="bx bx-filter"></i>
+                <div>
+                    <div class="team-section">
+                        <div class="order">
+                            <div class="head2">
+                                <h2>Meet Our Team</h2>
+                                <i class="bx bxs-group"></i>
+                            </div>
+                            <div class="team-container">
+                                <div
+                                    class="team-member"
+                                    onmouseover="showRole(this)"
+                                    onmouseout="hideRole(this)">
+                                    <img src="images/big bro.png" />
+                                    <h3>Adebayo <br />Emmanuel</h3>
+                                    <p class="role">CEO</p>
+                                </div>
+                                <div
+                                    class="team-member"
+                                    onmouseover="showRole(this)"
+                                    onmouseout="hideRole(this)">
+                                    <img src="images/kibo_profile.jpg" alt="Developer Image" />
+                                    <h3>Oderinwale <br />Samson</h3>
+                                    <p class="role">Lead Developer</p>
+                                </div>
+                                <div
+                                    class="team-member"
+                                    onmouseover="showRole(this)"
+                                    onmouseout="hideRole(this)">
+                                    <img src="images/Psticks.png" alt="Developer Image" />
+                                    <h3>
+                                        Adebayo <br />
+                                        Peter
+                                    </h3>
+                                    <p class="role">Frontend Developer</p>
+                                </div>
+                                <div
+                                    class="team-member"
+                                    onmouseover="showRole(this)"
+                                    onmouseout="hideRole(this)">
+                                    <img src="images/tobacco.png" alt="Developer Image" />
+                                    <h3>
+                                        Akinsola <br />
+                                        Toba
+                                    </h3>
+                                    <p class="role">Backend Developer</p>
+                                </div>
+                                <div
+                                    class="team-member"
+                                    onmouseover="showRole(this)"
+                                    onmouseout="hideRole(this)">
+                                    <img src="images/big sis.png" alt="Developer Image" />
+                                    <h3>
+                                        Adebayo <br />
+                                        Esther
+                                    </h3>
+                                    <p class="role">UI/UX Designer</p>
+                                </div>
+                                <div
+                                    class="team-member"
+                                    onmouseover="showRole(this)"
+                                    onmouseout="hideRole(this)">
+                                    <img src="images/Dandizy.png" alt="Developer Image" />
+                                    <h3>Adebayo <br />Daniel</h3>
+                                    <p class="role">DevOps Engineer</p>
+                                </div>
+                            </div>
                         </div>
-
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>User</th>
-                                    <th>Date order</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <img
-                                            src="images/bohemian-man-with-his-arms-crossed.jpg"
-                                            alt="" />
-                                        <p>Peter Sticks</p>
-                                    </td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status completed">Completed</span></td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <img
-                                            src="images/bohemian-man-with-his-arms-crossed.jpg"
-                                            alt="" />
-                                        <p>Peter Sticks</p>
-                                    </td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status pending">Pending</span></td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <img
-                                            src="images/bohemian-man-with-his-arms-crossed.jpg"
-                                            alt="" />
-                                        <p>Peter Sticks</p>
-                                    </td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status process">Processing</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img
-                                            src="images/bohemian-man-with-his-arms-crossed.jpg"
-                                            alt="" />
-                                        <p>Peter Sticks</p>
-                                    </td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status pending">Pending</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img
-                                            src="images/bohemian-man-with-his-arms-crossed.jpg"
-                                            alt="" />
-                                        <p>Peter Sticks</p>
-                                    </td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status completed">Completed</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
 
-                    <div class="todo">
+                    <!-- <div class="todo">
                         <div class="head">
                             <h3>Todos</h3>
                             <i class="bx bx-plus"></i>
@@ -236,7 +231,7 @@
                                 <i class="bx bx-dots-vertical-rounded"></i>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </main>
         </section>

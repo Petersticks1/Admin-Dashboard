@@ -165,7 +165,6 @@ const chartConfig = {
                     "rgba(255, 159, 64, 1)",
                 ],
                 borderWidth: 1,
-                
             },
         ],
     },
@@ -376,3 +375,25 @@ const configures = {
 // Render the chart
 const ctxPie = document.getElementById("expenditureChart").getContext("2d");
 const expenditureChart = new Chart(ctxPie, configures);
+
+//Team//
+function showRole(member) {
+    member.querySelector(".role").style.color = "#000";
+    role.style.transition = "opacity 0.3s ease";
+    role.style.opacity = "1";
+}
+
+function hideRole(member) {
+    member.querySelector(".role").style.color = "#777";
+    role.style.transition = "opacity 0.3s ease";
+    role.style.opacity = "1";
+}
+
+
+
+
+
+//Message
+
+
+ 
