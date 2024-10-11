@@ -29,6 +29,7 @@ li {
     --light-yellow: #fff2c6;
     --orange: #fd7238;
     --light-orange: #ffe003;
+    
 }
 html {
     overflow-x: hidden;
@@ -931,5 +932,7 @@ body {
     font-size: 0.9em;
     transition: color 0.3s ease;
 }
+
+
 
 /* Team styling */

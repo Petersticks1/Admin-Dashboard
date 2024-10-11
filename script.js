@@ -392,8 +392,3 @@ function hideRole(member) {
 
 
 
-
-//Message
-
-
- 
