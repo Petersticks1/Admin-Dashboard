@@ -29,7 +29,6 @@ li {
     --light-yellow: #fff2c6;
     --orange: #fd7238;
     --light-orange: #ffe003;
-    
 }
 html {
     overflow-x: hidden;
@@ -933,6 +932,175 @@ body {
     transition: color 0.3s ease;
 }
 
-
-
 /* Team styling */
+
+/* setting styling */
+.setting-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    background: var(--light);
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.setting-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--blue);
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-section {
+    margin-bottom: 30px;
+}
+
+.settings-section h2 {
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--blue);
+    padding-bottom: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--blue);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.settings-section button {
+    padding: 10px 20px;
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.settings-section button:hover {
+    background-color: blue;
+}
+
+@media screen and (max-width: 400px) {
+    .setting-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .setting-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .settings-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .settings-section button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    .settings-section button:hover {
+        background-color: blue;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .setting-container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .setting-container h1 {
+        font-size: 1.6rem;
+    }
+
+    .settings-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .form-group label {
+        font-size: 0.85rem;
+    }
+
+    .form-group input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 7px;
+        font-size: 13px;
+    }
+
+    .settings-section button {
+        padding: 7px 14px;
+        font-size: 13px;
+    }
+    .settings-section button:hover {
+        background-color: blue;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    .setting-container {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .setting-container h1 {
+        font-size: 1.4rem;
+    }
+
+    .settings-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .form-group label {
+        font-size: 0.8rem;
+    }
+
+    .form-group input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .settings-section button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    .settings-section button:hover {
+        background-color: blue;
+    }
+}
+/* settings styling */

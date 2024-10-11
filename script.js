@@ -376,6 +376,7 @@ const configures = {
 const ctxPie = document.getElementById("expenditureChart").getContext("2d");
 const expenditureChart = new Chart(ctxPie, configures);
 
+
 //Team//
 function showRole(member) {
     member.querySelector(".role").style.color = "#000";
@@ -392,3 +393,41 @@ function hideRole(member) {
 
 
 
+//setting//
+// Function to save account settings
+function saveAccountSettings() {
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // For demo purposes, log the values
+    console.log(`Account Settings Saved:
+    Username: ${username}
+    Email: ${email}
+    Password: ${password}`);
+    alert("Account settings saved!");
+}
+
+// Function to save notification settings
+function saveNotificationSettings() {
+    const emailNotifications = document.getElementById('emailNotifications').checked;
+    const smsNotifications = document.getElementById('smsNotifications').checked;
+    const pushNotifications = document.getElementById('pushNotifications').checked;
+
+    console.log(`Notification Settings Saved:
+    Email Notifications: ${emailNotifications}
+    SMS Notifications: ${smsNotifications}
+    Push Notifications: ${pushNotifications}`);
+    alert("Notification settings saved!");
+}
+
+// Function to save privacy settings
+function savePrivacySettings() {
+    const publicProfile = document.getElementById('publicProfile').checked;
+    const searchable = document.getElementById('searchable').checked;
+
+    console.log(`Privacy Settings Saved:
+    Public Profile: ${publicProfile}
+    Searchable: ${searchable}`);
+    alert("Privacy settings saved!");
+}
