@@ -376,7 +376,6 @@ const configures = {
 const ctxPie = document.getElementById("expenditureChart").getContext("2d");
 const expenditureChart = new Chart(ctxPie, configures);
 
-
 //Team//
 function showRole(member) {
     member.querySelector(".role").style.color = "#000";
@@ -390,15 +389,12 @@ function hideRole(member) {
     role.style.opacity = "1";
 }
 
-
-
-
 //setting//
 // Function to save account settings
 function saveAccountSettings() {
-    const username = document.getElementById('username').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
     // For demo purposes, log the values
     console.log(`Account Settings Saved:
@@ -410,9 +406,9 @@ function saveAccountSettings() {
 
 // Function to save notification settings
 function saveNotificationSettings() {
-    const emailNotifications = document.getElementById('emailNotifications').checked;
-    const smsNotifications = document.getElementById('smsNotifications').checked;
-    const pushNotifications = document.getElementById('pushNotifications').checked;
+    const emailNotifications = document.getElementById("emailNotifications").checked;
+    const smsNotifications = document.getElementById("smsNotifications").checked;
+    const pushNotifications = document.getElementById("pushNotifications").checked;
 
     console.log(`Notification Settings Saved:
     Email Notifications: ${emailNotifications}
@@ -423,11 +419,57 @@ function saveNotificationSettings() {
 
 // Function to save privacy settings
 function savePrivacySettings() {
-    const publicProfile = document.getElementById('publicProfile').checked;
-    const searchable = document.getElementById('searchable').checked;
+    const publicProfile = document.getElementById("publicProfile").checked;
+    const searchable = document.getElementById("searchable").checked;
 
     console.log(`Privacy Settings Saved:
     Public Profile: ${publicProfile}
     Searchable: ${searchable}`);
     alert("Privacy settings saved!");
+}
+
+//login//
+// script.js
+
+function validateForm() {
+    try {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        let isValid = true;
+
+        // Clear previous error messages
+        document.getElementById("usernameError").innerText = "";
+        document.getElementById("passwordError").innerText = "";
+
+        // Username validation
+        if (username === "") {
+            document.getElementById("usernameError").innerText = "Username is required";
+            document.getElementById("usernameError").style.display = "block";
+            isValid = false;
+        } else {
+            document.getElementById("usernameError").style.display = "none";
+        }
+
+        // Password validation
+        if (password === "") {
+            document.getElementById("passwordError").innerText = "Password is required";
+            document.getElementById("passwordError").style.display = "block";
+            isValid = false;
+        } else {
+            document.getElementById("passwordError").style.display = "none";
+        }
+
+        // If validation passes, navigate to another page
+        if (isValid) {
+            // Simulate successful navigation to another page
+            window.location.href = "index.html"; // Replace with your actual page
+        }
+    } catch (error) {
+        // Catch and display any unexpected errors
+        console.error("An error occurred during validation:", error);
+        alert("An error occurred. Please try again later.");
+    }
+
+    // Prevent the form from being submitted traditionally
+    return false;
 }
