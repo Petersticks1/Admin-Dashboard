@@ -40,7 +40,7 @@ body {
 .title h1 {
     font-size: 3.33rem;
     font-weight: 700;
-    color: var(--very-dark-magenta);
+    color: #3c91e6;
     letter-spacing: -1.2;
     line-height: 1;
 }
@@ -48,7 +48,7 @@ body {
 .title p {
     font-size: 1rem;
     font-weight: 500;
-    color: var(--dark-grayish-magenta);
+    color: #3c91e6;
     line-height: 1.8;
     padding-top: 1rem;
 }
@@ -66,7 +66,7 @@ body {
     display: flex;
     align-items: center;
     padding: 1rem 2rem;
-    background: var(--light-grayish-magenta);
+    background: #cfe8ff;
     border-radius: 10px;
 }
 .rated:first-child {
@@ -82,7 +82,7 @@ body {
 }
 
 .rated h3 {
-    color: var(--very-dark-magenta);
+    color: #3c91e6;
     font-size: 0.75rem;
     font-weight: 700;
     margin-left: 1rem;
@@ -105,7 +105,7 @@ body {
     margin-right: 1rem;
 }
 .detail h3 {
-    color: var(--white);
+    color: #cfe8ff;
     font-weight: 700;
     font-size: 0.75rem;
     line-height: 1.5;
@@ -121,7 +121,7 @@ body {
     color: var(--white);
 }
 .card {
-    background: var(--very-dark-magenta);
+    background: #3c91e6;
     padding: 2rem;
     border-radius: 10px;
     width: calc(100% / 3);

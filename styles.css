@@ -17,7 +17,11 @@ li {
 :root {
     --poppins: "Poppins", sans-serif;
     --lato: "lato", sans-serif;
-
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
     --light: #f9f9f9;
     --blue: #3c91e6;
     --light-blue: #cfe8ff;
@@ -874,11 +878,12 @@ body {
 }
 .team-section h2 {
     font-size: 2rem;
-    color: #333;
+    color:var(--blue);
 }
 
 .team-section .head2 i {
     font-size: 1rem;
+    color: var(--blue);
 }
 
 .team-container {
@@ -1105,8 +1110,6 @@ input[type="password"] {
 }
 /* settings styling */
 
-
-
 /* login styling */
 .dropdown {
     position: relative;
@@ -1114,7 +1117,7 @@ input[type="password"] {
 }
 
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: white;
     padding: 10px 20px;
     font-size: 16px;
