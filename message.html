@@ -5,6 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="styles.css" />
+
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function () {
+                emailjs.init({
+                    publicKey: "6Aq3SMZSDZwAp0-OV",
+                });
+            })();
+        </script>
         <title>AdminDashboard</title>
     </head>
     <body>
@@ -108,7 +119,7 @@
                     </a>
                 </div>
 
-                <ul class="box-info">
+                <!-- <ul class="box-info">
                     <li>
                         <i class="bx bxs-calendar-check"></i>
                         <span class="text">
@@ -131,117 +142,55 @@
                             <p>Total Sales</p>
                         </span>
                     </li>
-                </ul>
+                </ul> -->
+                <div class="message-container">
+                    <div class="email-container">
+                        <form id="emailForm" class="email-form" onsubmit="return sendEmail()">
+                            <h2>Send Email</h2>
 
-                <div class="table-data">
-                    <!-- <div class="order">
-                        <div class="head">
-                            <h3>Recent Orders</h3>
-                            <i class="bx bx-search"></i>
-                            <i class="bx bx-filter"></i>
-                        </div>
+                            <!-- Email Field -->
+                            <div class="input-group">
+                                <label for="email">Your Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Enter your email"
+                                    required />
+                                <small class="error-message" id="emailError"></small>
+                            </div>
 
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>User</th>
-                                    <th>Date order</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
+                            <!-- Subject Field -->
+                            <div class="input-group">
+                                <label for="subject">Subject</label>
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    name="subject"
+                                    placeholder="Enter subject"
+                                    required />
+                                <small class="error-message" id="subjectError"></small>
+                            </div>
 
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <img
-                                            src="images/bohemian-man-with-his-arms-crossed.jpg"
-                                            alt="" />
-                                        <p>Peter Sticks</p>
-                                    </td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status completed">Completed</span></td>
-                                </tr>
+                            <!-- Message Field -->
+                            <div class="input-group">
+                                <label for="message">Message</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    placeholder="Enter your message"
+                                    required></textarea>
+                                <small class="error-message" id="messageError"></small>
+                            </div>
 
-                                <tr>
-                                    <td>
-                                        <img
-                                            src="images/bohemian-man-with-his-arms-crossed.jpg"
-                                            alt="" />
-                                        <p>Peter Sticks</p>
-                                    </td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status pending">Pending</span></td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <img
-                                            src="images/bohemian-man-with-his-arms-crossed.jpg"
-                                            alt="" />
-                                        <p>Peter Sticks</p>
-                                    </td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status process">Processing</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img
-                                            src="images/bohemian-man-with-his-arms-crossed.jpg"
-                                            alt="" />
-                                        <p>Peter Sticks</p>
-                                    </td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status pending">Pending</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img
-                                            src="images/bohemian-man-with-his-arms-crossed.jpg"
-                                            alt="" />
-                                        <p>Peter Sticks</p>
-                                    </td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status completed">Completed</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div> -->
-
-                    <!-- <div class="todo">
-                        
-                        <div class="head">
-                            <h3>Todos</h3>
-                            <i class="bx bx-plus"></i>
-                            <i class="bx bx-filter"></i>
-                        </div>
-
-                        <ul class="todo-list">
-                            <li class="completed">
-                                <p>Todo List</p>
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </li>
-                            <li class="completed">
-                                <p>Todo List</p>
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </li>
-                            <li class="not-completed">
-                                <p>Todo List</p>
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </li>
-                            <li class="completed">
-                                <p>Todo List</p>
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </li>
-                            <li class="not-completed">
-                                <p>Todo List</p>
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </li>
-                        </ul>
-                    </div> -->
+                            <button type="submit">Send Email</button>
+                        </form>
+                    </div>
                 </div>
             </main>
         </section>
 
+        <script src="message.js"></script>
         <script src="script.js"></script>
     </body>
 </html>

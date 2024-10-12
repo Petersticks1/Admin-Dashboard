@@ -429,8 +429,6 @@ function savePrivacySettings() {
 }
 
 //login//
-// script.js
-
 function validateForm() {
     try {
         const username = document.getElementById("username").value;
@@ -473,3 +471,5 @@ function validateForm() {
     // Prevent the form from being submitted traditionally
     return false;
 }
+
+
